@@ -35,13 +35,14 @@ export default function StorageAvailable({}: Props) {
     const [importModal, setImportModal] = useState<boolean>(false);
     const [importedDb, setImportedDb] = useState<string>("");
     // Check if user inputed db object contains:
-    //      - Correctly named properties
+    //      - Correctly named properties and if there aren't added properties
     //      - The correct type of values for those properties
     //      - If the categories from the notes are included in categories array 
     //      - If the sort parameters are not modified from the allowed ones!
     function handleImportDb() {
         try {
             const parsedDb: DB = JSON.parse(importedDb);
+            let properties = ['categories', 'notes', 'popup', 'settings'];
             let checks = {
                 category: true,
                 notes: true,
@@ -53,7 +54,11 @@ export default function StorageAvailable({}: Props) {
                 "categories" in parsedDb &&
                 "notes" in parsedDb &&
                 "popup" in parsedDb &&
-                "settings" in parsedDb
+                "settings" in parsedDb &&
+                properties.length === Object.keys(parsedDb).length &&
+                properties.every((el) => {
+                    return Object.keys(parsedDb).includes(el);
+                })
             ) {
                 if (Array.isArray(parsedDb.categories)) {
                     checks.category = parsedDb.categories.every((el) => {
