@@ -1,0 +1,105 @@
+.dashboard-c {
+    max-width: 40rem;
+    margin: 0 auto;
+    padding: 1rem .5rem;
+
+    >div.inner-c {
+        background-color: lighten($main-bg, 15%);
+        border-radius: 8px;
+        color: $th-main-font;
+        padding: .5rem;
+
+        .notification-setting {
+            display: flex;
+            align-items: center;
+
+            >p {
+                margin: .5rem 0;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 100%;
+
+                >input {
+                    background-color: lighten($main-bg, 10%);
+                    color: $th-main-font;
+                    font-weight: bold;
+                    border: 0;
+                    outline: 0;
+                    max-width: 3.5rem;
+                    height: 1.5rem;
+                    padding: 0 6px;
+                    margin: 0 .5rem;
+                    border-radius: $th-MUI-border-radius;
+                    &:focus {
+                        box-shadow: 0px 0px 10px -3px white;
+                    }
+                }
+
+                >button {
+                    margin-left: 6px;
+                    background-color: lighten($main-bg, 10%);
+                    outline: 0;
+                    border: 0;
+                    color: $th-main-font;
+                    padding: 4px 8px;
+                    border-radius: $th-MUI-border-radius;
+                    font-weight: bold;
+                    cursor: pointer;
+                }
+    
+            }
+        }
+
+        >div.display-status {
+            >p {
+                margin: .5rem 0;
+            }
+
+            >input {
+                display: none;
+                &:checked {
+                    ~ ul.details-wrapper {
+                        max-height: 120px;
+                        overflow-y: auto;
+                    }
+
+                    ~ label .icon {
+                        transform: rotate(180deg);
+                        color: $th-main-bg;
+                    }
+                }
+            }
+
+            >label {
+                display: flex;
+                margin: 1rem 0;
+                margin-bottom: .5rem;
+                display: flex;
+                align-items: center;
+                cursor: pointer;
+
+                .icon {
+                    padding: 0;
+                    color: $th-main-font;
+                    font-variation-settings: 'FILL' 1;
+                    margin-left: 4px;
+                    font-size: 14px;
+                    transform: rotate(90deg);
+                    transition: transform .5s;
+                }
+            }
+
+            ul.details-wrapper {
+                max-height: 0;
+                overflow: hidden;
+                margin: 0;
+                margin-bottom: .5rem;
+
+                > p {
+                    margin: .5rem 0;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,114 @@
+.search-sort-c {
+    padding: 0 $paddingLR;
+
+    .display-search-term {
+        display: flex;
+
+        p {
+            margin: .5rem 0;
+            margin-bottom: 1rem;
+        }
+
+        p:nth-child(1) {
+            white-space: nowrap;
+        }
+
+        p:nth-child(2) {
+            margin-left: 4px;
+            font-weight: bold;
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+        }
+    }
+
+
+    .search-c {
+        position: relative;
+
+        .search-input {
+            width: 100%;
+            padding: 8px 48px 8px 16px;
+            border-radius: 25px;
+            outline: 0;
+            border: 0;
+            box-shadow: 0px 0px 0px 1px $th-MUI-border-color;
+            position: relative;
+
+            &:focus {
+                box-shadow: 0px 0px 0px 2px $th-main-bg;
+
+                &~.border {
+                    width: 2px;
+                    background-color: $th-main-bg;
+                }
+
+                &~button .icon {
+                    color: black;
+                }
+            }
+        }
+
+        .border {
+            position: absolute;
+            width: 1px;
+            height: 100%;
+            top: 0;
+            right: 44px;
+            background-color: $th-MUI-border-color;
+            z-index: 1;
+        }
+
+        >button {
+            display: inline;
+            position: absolute;
+            right: 0;
+            top: 50%;
+            transform: translate(-8px, -50%);
+            border: 0;
+            outline: 0;
+            background-color: transparent;
+            cursor: pointer;
+            padding: 0 2px;
+
+            .icon {
+                color: $th-MUI-border-color;
+            }
+        }
+    }
+
+    .sort-c {
+        display: flex;
+        align-items: center;
+
+        >p {
+            margin: 0;
+            margin-right: .5rem;
+        }
+
+        .select-wrapper {
+            width: fit-content;
+        }
+
+        .options {
+            z-index: 10;
+        }
+    }
+
+    .note-card-setting {
+        display: flex;
+        align-items: center;
+
+        >p {
+            margin-right: .5rem;
+        }
+
+        .select-wrapper {
+            width: fit-content;
+        }
+
+        .options {
+            z-index: 9;
+        }
+    }
+}

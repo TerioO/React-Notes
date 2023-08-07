@@ -1,0 +1,50 @@
+@import './global.scss';
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: 16px;
+    font-family: $font;
+}
+
+body {
+    background-color: $main-bg;
+    color: $default-color;
+}
+
+input, textarea, select, option, button, pre {
+    font-family: $font;
+    font-size: inherit;
+}
+
+.icon {
+    padding: $icon-padding;
+    @media (width <= $breakpoint_phone){
+        font-size: $icon-size-phone;
+    }
+    cursor: pointer;
+    user-select: none;
+}
+
+@import './Header.scss';
+@import './AddNote.scss';
+@import './Categories.scss';
+@import './Modal.scss';
+@import './Select.scss';
+@import './NoteCard.scss';
+@import './NotesList.scss';
+@import './Main.scss';
+@import './PopupMessage.scss';
+@import './StorageAvailable.scss';
+@import './SearchSort.scss';
+@import './Dashboard.scss';

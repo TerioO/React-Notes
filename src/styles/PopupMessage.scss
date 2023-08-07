@@ -1,0 +1,76 @@
+.popup-message-container {
+    $duration: 5s;
+
+    box-shadow: 0px 0px 10px 0px $th-MUI-border-color;
+    background-color: white;
+    color: black;
+    border: 1px solid $th-MUI-border-color;
+    position: fixed;
+    padding-bottom: 1rem;
+    right: 0;
+    top: 20px;
+    transform: translateX(100%);
+    animation-name: slidein;
+    animation-duration: $duration;
+    max-width: 300px;
+    z-index: 200;
+
+    @keyframes slidein {
+        0% {
+            right: 0;
+            transform: translateX(100%);
+        }
+
+        5% {
+            right: 20px;
+            transform: translateX(0);
+        }
+
+        95% {
+            right: 20px;
+            transform: translateX(0);
+        }
+    }
+
+    &::before {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        content: "";
+        background-color: $th-main-bg;
+        height: 5px;
+        animation: progressBar;
+        animation-duration: $duration;
+        animation-timing-function: ease-in-out;
+
+        @keyframes progressBar {
+            from {
+                width: 0;
+            }
+
+            to {
+                width: 100%;
+            }
+        }
+    }
+
+    &:hover::before,
+    &:hover {
+        animation-play-state: paused;
+    }
+
+    >div {
+        display: flex;
+        justify-content: flex-end;
+
+        >.icon {
+            margin: 6px .5rem;
+        }
+    }
+
+    .message {
+        margin: 0 1rem;
+        cursor: default;
+        overflow-wrap: break-word;
+    }
+}

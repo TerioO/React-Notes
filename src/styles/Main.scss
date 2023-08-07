@@ -1,0 +1,12 @@
+main.main-c {
+    margin-left: $header-width;
+
+    @media (width <= 840px){
+        margin-left: 345px;
+    }
+
+    @media (width <=$breakpoint_phone) {
+        margin-left: 0;
+        margin-top: calc($header-checkbox-btn-width * .75);
+    }
+}

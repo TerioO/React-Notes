@@ -1,0 +1,75 @@
+input.select-component-checkbox {
+    display: none;
+
+    &:checked ~.select-c {
+        outline: 2px solid $th-main-bg;
+    }
+
+    &:checked ~.select-c .options {
+        max-height: 250px;
+        outline: 2px solid $th-main-bg;
+    }
+
+    &:checked ~.select-c label .icon {
+        transform: rotate(180deg)
+    }
+}
+
+.select-c {
+    width: 100%;
+    outline: 1px solid $th-MUI-border-color;
+    border-radius: 4px;
+    position: relative;
+    label {
+        cursor: pointer;
+    }
+
+    div.initial {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 0 $paddingLR;
+
+        p {
+            text-overflow: ellipsis;
+            overflow: hidden;
+            margin: 0;
+            padding: $paddingLR 0;
+        }
+
+        .icon {
+            padding: 0;
+            margin-left: 1rem;
+            color: $th-MUI-border-color;
+            font-variation-settings: 'FILL' 1;
+            font-size: 14px;
+        }
+    }
+
+    div.options {
+        border-radius: 4px;
+        border-top-left-radius: 0;
+        border-top-right-radius: 0;
+        max-height: 0px;
+        position: absolute;
+        width: 100%;
+        z-index: 1010;
+        overflow: clip;
+        overflow-y: auto;    
+        top: 100%;
+        left: 0;
+        background-color: $header-bg;
+
+        p {
+            text-align: center;
+            text-overflow: ellipsis;
+            overflow: hidden;
+            margin: 0;
+            padding: $paddingLR;
+        }
+
+        label+label p {
+            border-top: 1px solid $th-MUI-border-color;
+        }
+    }
+}

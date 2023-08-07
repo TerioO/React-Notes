@@ -1,0 +1,241 @@
+.Card {
+    display: flex;
+    flex-direction: column;
+    background-color: $header-bg;
+    margin: $paddingLR;
+    width: 300px;
+    border-radius: 6px;
+
+    .btns {
+        display: flex;
+        justify-content: space-between;
+
+        .icon {
+            padding: $paddingLR;
+            font-size: 26px;
+        }
+    }
+
+    >div {
+        &:nth-child(1) {
+            margin: 0;
+        }
+
+        margin: $paddingLR;
+    }
+
+    .title-c {
+        p {
+            font-size: 1.125rem;
+            font-weight: bold;
+            margin: 0;
+            margin-top: .5rem;
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+
+            @media (width <=350px) {
+                width: calc(100vw - 60px);
+            }
+
+            @media (width <=700px) and (width > $breakpoint_phone) {
+                width: calc(100vw - 405px);
+            }
+        }
+    }
+
+    .date-time-c {
+        .icon-date {
+            display: flex;
+            align-items: center;
+
+            p {
+                margin: .5rem 0;
+            }
+
+            .icon {
+                padding: 0;
+                margin-right: .5rem;
+                cursor: default;
+            }
+        }
+    }
+
+    .description-c {
+        border: 1px solid $th-MUI-border-color;
+        border-radius: $th-MUI-border-radius;
+        height: 150px;
+
+
+        input,
+        label,
+        .icon {
+            display: none;
+        }
+
+        pre {
+            padding: 10px;
+            margin: 0;
+            width: 100%;
+            height: 100%;
+            overflow-y: auto;
+            word-wrap: break-word;
+            white-space: pre-wrap;
+        }
+    }
+
+    .category-c {
+        border-radius: $th-MUI-border-radius;
+        border: 1px solid $th-MUI-border-color;
+        padding: 4px 6px;
+        background-color: $th-main-bg;
+        color: $th-main-font;
+        width: fit-content;
+        max-width: calc(100% - 1rem);
+
+        p {
+            margin: 0;
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+
+            // Manually set width for long text at faulty breakpoints:
+            @media (width <=350px) {
+                max-width: calc(100vw - 60px);
+            }
+
+            @media (width <=700px) and (width > $breakpoint_phone) {
+                max-width: calc(100vw - 405px);
+            }
+        }
+    }
+}
+
+
+// Minimal Design: -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+.Minimal {
+    background-color: white;
+    position: relative;
+    width: 420px;
+    margin: .5rem auto;
+    border-radius: $th-MUI-border-radius;
+
+    @media (width <=$breakpoint_phone) {
+        width: calc(100vw - 2rem);
+        margin: .5rem auto;
+    }
+
+    @media (width > $breakpoint_phone) and (width < 840px) {
+        width: calc(100vw - 345px - 2rem);
+    }
+
+    div.btns {
+        position: absolute;
+        right: 0;
+
+        .icon:nth-child(1) {
+            margin-right: 6px;
+        }
+    }
+
+    div.title-c {
+        >p {
+            margin: .5rem 75px .5rem .5rem;
+            font-size: 1.125rem;
+            font-weight: bold;
+            width: calc(100% - 75px - 0.5rem);
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+
+            @media (width <=$breakpoint_phone) {
+                width: calc(100vw - 75px - 2rem)
+            }
+        }
+    }
+
+    div.date-time-c {
+        display: flex;
+        padding-right: $paddingLR;
+
+        .icon-date {
+            display: flex;
+            align-items: center;
+
+            &:nth-child(2) {
+                margin-left: 1rem;
+            }
+        }
+
+        p {
+            margin: .5rem 0;
+            margin-left: 2px;
+        }
+
+    }
+
+    div.description-c {
+        margin: 0.5rem;
+
+        input {
+            display: none;
+
+            &:checked~label .icon {
+                transform: rotate(180deg);
+                color: $th-main-bg;
+            }
+
+            &:checked~pre {
+                max-height: 150px;
+                padding-top: 5px;
+            }
+        }
+
+        label {
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+
+            .icon {
+                padding: 0;
+                margin-left: 2px;
+                color: $th-MUI-border-color;
+                font-variation-settings: 'FILL' 1;
+                font-size: 14px;
+                transform: rotate(90deg);
+                transition: transform .5s;
+            }
+        }
+
+
+        >pre {
+            margin: 0;
+            margin-left: .5rem;
+            max-width: calc(100% - 1rem);
+            max-height: 0px;
+            overflow-y: auto;
+            word-wrap: break-word;
+            white-space: pre-wrap;
+        }
+
+    }
+
+    div.category-c {
+        width: fit-content;
+        max-width: calc(100% - 1rem);
+        margin: .5rem;
+        background-color: $th-main-bg;
+        color: $th-main-font;
+        padding: 4px 6px;
+        border-radius: $th-MUI-border-radius;
+        border: 1px solid $th-MUI-border-radius;
+
+        p {
+            margin: 0;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+
+    }
+}

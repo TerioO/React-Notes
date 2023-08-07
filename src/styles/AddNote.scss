@@ -1,0 +1,175 @@
+.add-note-c {
+    display: flex;
+    justify-content: center;
+    margin-top: $paddingLR;
+    padding: 0 $paddingLR;
+    z-index: 2;
+
+    .icon {
+        font-size: 34px;
+    }
+}
+
+form.add-note-form {
+    background-color: $header-bg;
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    width: 350px;
+    @media (height <= 660px){
+        height: 90vh;
+        overflow-y: auto;
+        box-shadow: 0px 0px 0px 0px;
+    }
+    margin: 0 .5rem;
+    box-shadow: 0px 0px 7px 1px #139c91 inset;
+    overflow: hidden;
+
+    >div {
+        padding: $paddingLR;
+    }
+
+    p.form-title {
+        font-size: 1.25rem;
+        font-weight: bold;
+        padding: 0 $paddingLR;
+        margin-left: .75rem;
+        margin-top: 3rem;
+        margin-bottom: .5rem;
+
+    }
+
+    div.title-category-c {
+        padding-top: 0;
+        display: flex;
+        flex-direction: column;
+
+        input {
+            margin: $paddingLR 0;
+            margin-bottom: 1rem;
+            padding-top: $paddingLR;
+            padding-bottom: 3px;
+            border: 0;
+            flex: 1;
+            outline: 0;
+            box-shadow: 0px 2px 0px -1px $th-MUI-border-color;
+            text-align: center;
+            margin-left: 1.5rem;
+            margin-right: 1rem;
+
+            &:focus {
+                box-shadow: 0px 2px 0px -1px $th-main-bg, 0px 10px 5px -6px $th-main-bg;
+            }
+
+
+        }
+
+        >p {
+            font-weight: bold;
+            font-size: 1.05rem;
+            margin: .5rem 0 .5rem .75rem;
+        }
+
+        .sel-c {
+            flex: 1;
+            margin-left: 1.5rem;
+            margin-right: 1rem;
+        }
+    }
+
+    div.datepicker-c {
+        margin: .5rem 0 .5rem 1.5rem;
+
+        >p {
+            margin-top: .5rem;
+            margin-bottom: 3px;
+        }
+    }
+
+    div.timepicker-c {
+        margin: .5rem 0 .5rem 1.5rem;
+
+        >p {
+            margin-top: .5rem;
+            margin-bottom: 3px;
+        }
+    }
+
+    div.textarea-c {
+        >p {
+            font-weight: bold;
+            font-size: 1.05rem;
+            margin: .5rem 0 .5rem .75rem;
+        }
+
+        textarea {
+            max-height: 150px;
+            min-height: 3rem;
+            max-width: 246px;
+            min-width: 100px;
+            height: 150px;
+            width: 246px;
+            @media(width <= $breakpoint_phone){
+                width: calc(100vw - 5rem) !important;
+            }
+            padding: 10px;
+            border: 0;
+            outline: 0;
+            box-shadow: 0px 0px 0px 1px $th-MUI-border-color;
+            border-radius: 4px;
+            margin-left: 1.5rem;
+
+            &:focus {
+                box-shadow: 0px 0px 0px 2px $th-main-bg;
+            }
+        }
+
+    }
+
+    >button {
+        border: 0;
+        margin-top: $paddingLR;
+        background-color: $th-main-bg;
+        color: $th-main-font;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        box-shadow: 0px 0px 7px 2px $th-main-bg;
+        cursor: pointer;
+
+        p {
+            margin: 0;
+            font-size: 1.125rem;
+        }
+
+        .icon {
+            font-size: 28px;
+        }
+
+        .edit {
+            font-size: 24px !important;
+            position: relative;
+            top: 2px;
+            margin-bottom: 6px;
+        }
+    }
+
+    >div.close-btn {
+        position: absolute;
+        right: 0;
+        width: 110px;
+        height: 110px;
+        background-color: $th-main-bg;
+        box-shadow: 0px 0px 7px 2px $th-main-bg;
+        transform: translate(50%, -50%) rotate(45deg);
+
+        .icon {
+            position: absolute;
+            color: $th-main-font;
+            font-size: 38px;
+            bottom: 0;
+            left: 50%;
+            transform: translate(-50%, 0) rotate(45deg)
+        }
+    }
+}
